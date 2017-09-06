@@ -817,9 +817,9 @@ end
 local function OnMouseDownAnnounce(id)
 	if RareAnnounced[id] == nil then
 		if RareAliveHP[id] == nil then
-			SendChatMessage("[RareCoordinator] "..RC:getLocalRareName(id)..": ", "CHANNEL", nil, 1)
+			SendChatMessage("[ArgusRareCoordinator] "..RC:getLocalRareName(id)..": ", "CHANNEL", nil, 1)
 		else
-			SendChatMessage("[RareCoordinator] "..RC:getLocalRareName(id).." ("..RareAliveHP[id].."%): ", "CHANNEL", nil, 1)
+			SendChatMessage("[ArgusRareCoordinator] "..RC:getLocalRareName(id).." ("..RareAliveHP[id].."%): ", "CHANNEL", nil, 1)
 		end
 		SendChatMessage("[RCELVA]"..RC.version.."_"..id.."_announce_"..time().."_", "CHANNEL", nil, RC:getChanID(GetChannelList()))
 		RareAnnounced[id] = time()
@@ -829,10 +829,10 @@ end
 
 local function ShowMap(id)
 	if RC ~= nil and RC.mid ~= nil and RC.mid.map ~= nil and RC.mid.map[id] ~= nil then
-		RC.mid.map[id].map:SetTexture("Interface\\AddOns\\RareCoordinator\\imgs\\"..GetCurrentMapAreaID().."\\map.tga")
+		RC.mid.map[id].map:SetTexture("Interface\\AddOns\\ArgusRareCoordinator\\imgs\\"..GetCurrentMapAreaID().."\\map.tga")
 		if RCDB.sort then
 			local sorted = RC:createSortedTable(false)
-			RC.mid.map[id].overlay:SetTexture("Interface\\AddOns\\RareCoordinator\\imgs\\"..GetCurrentMapAreaID().."\\"..sorted[id].id..".tga")
+			RC.mid.map[id].overlay:SetTexture("Interface\\AddOns\\ArgusRareCoordinator\\imgs\\"..GetCurrentMapAreaID().."\\"..sorted[id].id..".tga")
 			RC.mid.map[id].text:SetText(RC:getLocalRareName(sorted[id].id))
 			
 			if currentLocation[sorted[id].id] then
@@ -842,7 +842,7 @@ local function ShowMap(id)
 				RC.mid.map[id].marker:Hide()
 			end
 		else
-			RC.mid.map[id].overlay:SetTexture("Interface\\AddOns\\RareCoordinator\\imgs\\"..GetCurrentMapAreaID().."\\"..RareIDs[id]..".tga")
+			RC.mid.map[id].overlay:SetTexture("Interface\\AddOns\\ArgusRareCoordinator\\imgs\\"..GetCurrentMapAreaID().."\\"..RareIDs[id]..".tga")
 			RC.mid.map[id].text:SetText(RC:getLocalRareName(RareIDs[id]))
 		end
 		RC.mid.map[id]:Show()	
@@ -1462,7 +1462,7 @@ RCminimized.title = RCminimized:CreateFontString("RCminimized.title", nil, "Game
 RCminimized.title:SetPoint("CENTER", "RCminimized", 0, 0)
 RCminimized.title:SetFont("Fonts\\ARIALN.TTF",12,"OUTLINE")
 RCminimized.title:SetTextColor(1,1,1)
-RCminimized.title:SetText("RareCoordinator")
+RCminimized.title:SetText("ArgusRareCoordinator")
 
 RCminimized:Hide()
 RCminimized.maximizeicon:SetScript("OnMouseDown", function (self) MinMaximize() end)
@@ -1545,7 +1545,7 @@ function RC:ShowUpdateMessage()
 	RCupdatemsg.title:SetPoint("TOP", "RCupdatemsg", 0, -4)
 	RCupdatemsg.title:SetFont("Fonts\\ARIALN.TTF",14,"OUTLINE")
 	RCupdatemsg.title:SetTextColor(1,1,1)
-	RCupdatemsg.title:SetText("RareCoordinator")
+	RCupdatemsg.title:SetText("ArgusRareCoordinator")
 	
 	RCupdatemsg.text = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
 	RCupdatemsg.text:SetPoint("TOPLEFT", RCupdatemsg, 10, -22)
@@ -1554,14 +1554,14 @@ function RC:ShowUpdateMessage()
 	RCupdatemsg.text:SetJustifyH("LEFT")
 	local v="|cff00ff00"..RC.version.."|r"
 	if RC.isAlpha then v=v.."+ (newer alpha)" end
-	RCupdatemsg.text:SetText("Thank you for choosing RareCoordinator.\nYou are using v"..v..".")
+	RCupdatemsg.text:SetText("Thank you for choosing ArgusRareCoordinator.\nYou are using v"..v..".")
 	
 	RCupdatemsg.important = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
 	RCupdatemsg.important:SetPoint("TOPLEFT", RCupdatemsg.text, 0, -RCupdatemsg.text:GetStringHeight()-5)
 	RCupdatemsg.important:SetFont("Fonts\\ARIALN.TTF",12)
 	RCupdatemsg.important:SetTextColor(1,0,0)
 	RCupdatemsg.important:SetJustifyH("LEFT")
-	RCupdatemsg.important:SetText("Remember to update RareCoordinator after WoD goes live.")
+	RCupdatemsg.important:SetText("Remember to update ArgusRareCoordinator after WoD goes live.")
 	
 	RCupdatemsg.features = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
 	RCupdatemsg.features:SetPoint("TOPLEFT", RCupdatemsg.important, 0, -RCupdatemsg.important:GetStringHeight()-5)
@@ -1904,7 +1904,7 @@ RC.opt.biggerbag.cb:SetScript("OnClick",
   
 local function LockOrUnlock()
 	if locked then
-		print("RareCoordinator is now |cff00ff00unlocked|r. - Type /rc or /rare to lock it")
+		print("ArgusRareCoordinator is now |cff00ff00unlocked|r. - Type /arc to lock it")
 		
 		RC:EnableMouse(true)
 		RC:SetMovable(true)
@@ -1936,7 +1936,7 @@ local function LockOrUnlock()
 		
 		locked = false
 	else
-		print("RareCoordinator is now |cffff0000locked|r. - Type /rc or /rare to unlock it")	
+		print("ArgusRareCoordinator is now |cffff0000locked|r. - Type /arc to unlock it")	
 		
 		RC:SetMovable(false)
 		RC:EnableMouse(false)
@@ -2006,7 +2006,7 @@ function RC:OnEvent(event, ...)
 end
 
 function RC:OnLoad(...)
-	if select(1, ...) == "RareCoordinator" then
+	if select(1, ...) == "ArgusRareCoordinator" then
 		--print("RareCoordinator loaded - type /rc or /rare for options");
 		if RCDB.x == nil or RCDB.y == nil then
 			self:SetPoint("CENTER",-200,0)
@@ -2347,7 +2347,7 @@ function RC:CombatLog(timeStamp, event, hideCaster, sourceGUID, sourceName, sour
 					RareAliveHP[v] = nil
 					SendChatMessage("[RCELVA]"..self.version.."_"..npcID.."_dead_"..time().."_", "CHANNEL", nil, self:getChanID(GetChannelList()))
 					if RareAnnouncedSelf[v] then
-						SendChatMessage("{rt8} [RareCoordinator] "..RC:getLocalRareName(npcID).." is now dead {rt8}", "CHANNEL", nil, 1)
+						SendChatMessage("{rt8} [ArgusRareCoordinator] "..RC:getLocalRareName(npcID).." is now dead {rt8}", "CHANNEL", nil, 1)
 						RareAnnouncedSelf[v] = nil
 						RareAnnounced[v] = nil
 					end
