@@ -229,74 +229,137 @@ local RareIDs = {
 	126898, -- Sabuul
 }
 local RareCoords = {}
-RareCoords[73174] = "next to any cauldron within Ordon Sanctuary" -- Archiereus of Flame Sanctuary
-RareCoords[73666] = "on the Tree-Breeze Terrace (34/28)" -- Archiereus of Flame Summoned
-RareCoords[72775] = "around 65.4 / 70.0" -- Bufo
-RareCoords[73171] = "patrols between the 2 big bridges" -- Champion of the Black Flame
-RareCoords[72045] = "25.3 / 35.8" -- Chelon
-RareCoords[73175] = "54.0 / 52.4" -- Cinderfall
-RareCoords[72049] = "44.5 / 69.0" -- Cranegnasher
---RareCoords[71826] = "47.5 / 73.5" -- Crystal Event
-RareCoords[73281] = "25.8 / 23.2" -- Dread Ship Vazuvius
-RareCoords[73158] = "varied spawn in the forest" -- Emerald Gander
-RareCoords[73279] = "swims around the isle" -- Evermaw
-RareCoords[73172] = "varied spawn around Ordon Sanctuary" -- Flintlord Gairan
-RareCoords[73282] = "64.8 / 28.8" -- Garnia
-RareCoords[72970] = "62.5 / 63.5" -- Golganarr
-RareCoords[73161] = "varied spawn around west coast" -- Great Turtle Furyshell
-RareCoords[72909] = "varied spawn around Old Pi'jiu village" -- Gu'chi the Swarmbringer
-RareCoords[73167] = "varied spawn flying around the bridges" -- Huolon 
-RareCoords[73163] = "varied spawn around the forests in the center area" -- Imperial Python
-RareCoords[73160] = "varied spawn around the center area" -- Ironfur Steelhorn
-RareCoords[73169] = "52.0 / 83.4" -- Jakur of Ordon
-RareCoords[72193] = "33.9 / 85.1" -- Karkanos
-RareCoords[73277] = "67.3 / 44.1" -- Leafmender
-RareCoords[73166] = "varied spawn around the beach" -- Monstrous Spineclaw
-RareCoords[72048] = "60.6 / 87.2" -- Rattleskew
-RareCoords[73157] = "45.4 / 29.4" -- Rock Moss
-RareCoords[71864] = "59.0 / 48.8" -- Spelurk
-RareCoords[72769] = "45.4 / 38.9" -- Spirit of Jadefire
-RareCoords[73704] = "71.5 / 80.7" -- Stinkbraid 
-RareCoords[72808] = "54.6 / 44.3" -- Tsavo'ka
-RareCoords[73173] = "45.4 / 26.6" -- Urdur the Cauterizer
-RareCoords[73170] = "57.5 / 77.1" -- Watcher Osu
-RareCoords[72245] = "47.6 / 87.3" -- Zesqua
-RareCoords[71919] = "37.4 / 77.4" -- Zhu-Gon the Sour
+ -- Krokuun
+RareCoords[123689] = "Krokuun - 54.8 , 81.31" -- Talestra the Vile
+RareCoords[125820] = "Krokuun - 42.34, 69.83" -- Imp Mother Laglath
+RareCoords[122912] = "Krokuun - 33.62, 75.43" -- Commander Sathrenael
+RareCoords[124775] = "Krokuun - 45.39, 58.77" -- Commander Endaxis
+RareCoords[124804] = "Krokuun - 69.29, 59.47" -- Tereck the Selector
+RareCoords[125479] = "Krokuun - 70.18, 81.24" -- Tar Spitter
+RareCoords[120393] = "Krokuun - 58.31, 75.69" -- Siegemaster Voraan
+RareCoords[125388] = "Krokuun - 60.89, 19.6" -- Vagath the Betrayed
+RareCoords[123464] = "Krokuun - 52.87, 31.08" -- Sister Subversia
+RareCoords[126419] = "Krokuun - 71.06, 32.72" -- Naroua
+RareCoords[125824] = "Krokuun - 50.58, 17.71" -- Khazaduum
+RareCoords[122911] = "Krokuun - 38.36, 59.52" -- Commander Vecaya
+ -- Antoran Wastes 
+RareCoords[127288] = "Antoran Wastes - 62.9 , 24.99" -- Houndmaster Kerrax
+RareCoords[126040] = "Antoran Wastes - 63.85, 21.08" -- Puscilla
+RareCoords[127705] = "Antoran Wastes - 66.71, 17.99" -- Mother Rosula
+RareCoords[127376] = "Antoran Wastes - 61.44, 21.02" -- Chief Alchemist Munculus 
+RareCoords[126946] = "Antoran Wastes - 60.63, 48.38" -- Inquisitor Vethroz
+RareCoords[122999] = "Antoran Wastes - 55.76, 45.95" -- Gar'zoth
+RareCoords[127090] = "Antoran Wastes - 73.58, 72.09" -- Admiral Rel'var
+RareCoords[127096] = "Antoran Wastes - 74.98, 57.07" -- All-Seer Xanarian
+RareCoords[122958] = "Antoran Wastes - 61.78, 36.96" -- Blistermaw
+RareCoords[126199] = "Antoran Wastes - 53.03, 36.0" -- Vrax'thul
+RareCoords[126115] = "Antoran Wastes - 66.38, 54.24" -- Ven'orn
+RareCoords[126208] = "Antoran Wastes - 64.29, 48.09" -- Varga
+RareCoords[126338] = "Antoran Wastes - 61.33, 65.15" -- Wrath-Lord Yarez
+RareCoords[127118] = "Antoran Wastes - 50.9 , 55.3" -- WorldSplitter Skuul
+RareCoords[126254] = "Antoran Wastes - 62.21, 53.52" -- Lieutenant Xakaar 
+RareCoords[127581] = "Antoran Wastes - 54.8 , 39.15" -- The Many-Faced Devourer
+RareCoords[122947] = "Antoran Wastes - 57.32, 33.57" -- Mistress Il'thendra
+RareCoords[127703] = "Antoran Wastes - 58, 12" -- Doomcaster Suprax
+RareCoords[127700] = "Antoran Wastes - 84.6, 81" -- Squadron Commander Vishax
+RareCoords[127300] = "Antoran Wastes - 55.39, 21.64" -- Void Warden Valsuran
+RareCoords[127084] = "Antoran Wastes - 82.66, 65.63" -- Commander Texlaz
+RareCoords[127706] = "Antoran Wastes - 64.92, 82.88" -- Rezira the Seer
+RareCoords[127291] = "Antoran Wastes - 52.7 , 29.5" -- Watcher Aival
+ -- Mac'aree
+RareCoords[126867] = "Mac'aree - 33.65, 48.10" -- Venomtail Skyfin
+RareCoords[126860] = "Mac'aree - 38.64, 55.58" -- Kaara The pale
+RareCoords[126869] = "Mac'aree - 27.16, 30" -- Captain Faruq
+RareCoords[126912] = "Mac'aree - 49.81,  9.83" -- Skreeg the Devourer
+RareCoords[124440] = "Mac'aree - 58.73, 37.60" -- Overseer y'Beda
+RareCoords[126913] = "Mac'aree - 48.79, 52.35" -- Slithon the last
+RareCoords[126899] = "Mac'aree - 48.11, 40.60" -- Jed'hin Champion Vorsuk
+RareCoords[126866] = "Mac'aree - 63.89, 64.42" -- Vigilant Kuro
+RareCoords[126908] = "Mac'aree - 64.03, 29.52" -- Zul'tan the Numerous
+RareCoords[126862] = "Mac'aree - 43.81, 60.63" -- Baruut the Bloodthirsty
+RareCoords[126896] = "Mac'aree - 35.95, 58.97" -- Herald of Chaos
+RareCoords[126865] = "Mac'aree - 36.73, 23.88" -- Vigilant Thanos
+RareCoords[126900] = "Mac'aree - 61.89, 50.37" -- Instructor Tarahna
+RareCoords[126852] = "Mac'aree - 55.58, 60.25" -- Wrangler Kravos
+RareCoords[126887] = "Mac'aree - 30.13, 40.21" -- Ataxon
+RareCoords[126868] = "Mac'aree - 39.15, 66.72" -- Turek the Lucid
+RareCoords[125498] = "Mac'aree - 60.92, 29.83" -- Overseer Y'Morna
+RareCoords[126864] = "Mac'aree - 41.15, 11.49" -- Feasel the Muffin Thief
+RareCoords[127704] = "Mac'aree - UNKNOWN" -- soultender Videx
+RareCoords[125497] = "Mac'aree - 58.0, 30.9" -- Overseer Y'Sorna
+RareCoords[126910] = "Mac'aree - 56.8, 14.5" -- Commander Xethgar
+RareCoords[122838] = "Mac'aree - 44.6, 71.6" -- Shadowcaster Voruun
+RareCoords[126815] = "Mac'aree - 65.3, 67.5" -- Soultwisted Monstrosity
+RareCoords[126885] = "Mac'aree - 35.2, 37.2" -- Umbraliss
+RareCoords[126889] = "Mac'aree - 70.4, 46.7" -- Sorolis the Ill-Fated
+RareCoords[126898] = "Mac'aree - 44.2, 49.8" -- Sabuul
+
 
 local RareCoordsRaw = {}
-RareCoordsRaw[73174] = {x=49.7, y=22.2} -- Archiereus of Flame Sanctuary
-RareCoordsRaw[73666] = {x=34.9, y=28.9} -- Archiereus of Flame Summoned
-RareCoordsRaw[72775] = {x=65.4, y=70.0} -- Bufo
-RareCoordsRaw[73171] = {x=0, y=0} -- Champion of the Black Flame
-RareCoordsRaw[72045] = {x=25.3, y=35.8} -- Chelon
-RareCoordsRaw[73175] = {x=54.0, y=52.4} -- Cinderfall
-RareCoordsRaw[72049] = {x=44.5, y=69.0} -- Cranegnasher
---RareCoordsRaw[71826] = {x=47.5, y=73.5} -- Crystal Event
-RareCoordsRaw[73281] = {x=25.8, y=23.2} -- Dread Ship Vazuvius
-RareCoordsRaw[73158] = {x=0, y=0} -- Emerald Gander
-RareCoordsRaw[73279] = {x=0, y=0} -- Evermaw
-RareCoordsRaw[73172] = {x=0, y=0} -- Flintlord Gairan
-RareCoordsRaw[73282] = {x=64.8, y=28.8} -- Garnia
-RareCoordsRaw[72970] = {x=62.5, y=63.5} -- Golganarr
-RareCoordsRaw[73161] = {x=0, y=0} -- Great Turtle Furyshell
-RareCoordsRaw[72909] = {x=0, y=0} -- Gu'chi the Swarmbringer
-RareCoordsRaw[73167] = {x=0, y=0} -- Huolon 
-RareCoordsRaw[73163] = {x=0, y=0} -- Imperial Python
-RareCoordsRaw[73160] = {x=0, y=0} -- Ironfur Steelhorn
-RareCoordsRaw[73169] = {x=52.0, y=83.4} -- Jakur of Ordon
-RareCoordsRaw[72193] = {x=33.9, y=85.1} -- Karkanos
-RareCoordsRaw[73277] = {x=67.3, y=44.1} -- Leafmender
-RareCoordsRaw[73166] = {x=0, y=0} -- Monstrous Spineclaw
-RareCoordsRaw[72048] = {x=60.6, y=87.2} -- Rattleskew
-RareCoordsRaw[73157] = {x=45.4, y=29.4} -- Rock Moss
-RareCoordsRaw[71864] = {x=59.0, y=48.8} -- Spelurk
-RareCoordsRaw[72769] = {x=45.4, y=38.9} -- Spirit of Jadefire
-RareCoordsRaw[73704] = {x=71.5, y=80.7} -- Stinkbraid 
-RareCoordsRaw[72808] = {x=54.6, y=44.3} -- Tsavo'ka
-RareCoordsRaw[73173] = {x=45.4, y=26.6} -- Urdur the Cauterizer
-RareCoordsRaw[73170] = {x=57.5, y=77.1} -- Watcher Osu
-RareCoordsRaw[72245] = {x=47.6, y=87.3} -- Zesqua
-RareCoordsRaw[71919] = {x=37.4, y=77.4} -- Zhu-Gon the Sour
+ -- Krokuun
+RareCoordsRaw[123689] = {Zone="Krokuun", X=54.8, Y=81.31} -- Talestra the Vile
+RareCoordsRaw[125820] = {Zone="Krokuun", X=42.34, Y=69.83} -- Imp Mother Laglath
+RareCoordsRaw[122912] = {Zone="Krokuun", X=33.62, Y=75.43} -- Commander Sathrenael
+RareCoordsRaw[124775] = {Zone="Krokuun", X=45.39, Y=58.77} -- Commander Endaxis
+RareCoordsRaw[124804] = {Zone="Krokuun", X=69.29, Y=59.47} -- Tereck the Selector
+RareCoordsRaw[125479] = {Zone="Krokuun", X=70.18, Y=81.24} -- Tar Spitter
+RareCoordsRaw[120393] = {Zone="Krokuun", X=58.31, Y=75.69} -- Siegemaster Voraan
+RareCoordsRaw[125388] = {Zone="Krokuun", X=60.89, Y=19.6} -- Vagath the Betrayed
+RareCoordsRaw[123464] = {Zone="Krokuun", X=52.87, Y=31.08} -- Sister Subversia
+RareCoordsRaw[126419] = {Zone="Krokuun", X=71.06, Y=32.72} -- Naroua
+RareCoordsRaw[125824] = {Zone="Krokuun", X=50.58, Y=17.71} -- Khazaduum
+RareCoordsRaw[122911] = {Zone="Krokuun", X=38.36, Y=59.52} -- Commander Vecaya
+ -- Antoran Wastes 
+RareCoordsRaw[127288] = {Zone="Antoran Wastes", X=62.9 , Y=24.99} -- Houndmaster Kerrax
+RareCoordsRaw[126040] = {Zone="Antoran Wastes", X=63.85, Y=21.08} -- Puscilla
+RareCoordsRaw[127705] = {Zone="Antoran Wastes", X=66.71, Y=17.99} -- Mother Rosula
+RareCoordsRaw[127376] = {Zone="Antoran Wastes", X=61.44, Y=21.02} -- Chief Alchemist Munculus 
+RareCoordsRaw[126946] = {Zone="Antoran Wastes", X=60.63, Y=48.38} -- Inquisitor Vethroz
+RareCoordsRaw[122999] = {Zone="Antoran Wastes", X=55.76, Y=45.95} -- Gar'zoth
+RareCoordsRaw[127090] = {Zone="Antoran Wastes", X=73.58, Y=72.09} -- Admiral Rel'var
+RareCoordsRaw[127096] = {Zone="Antoran Wastes", X=74.98, Y=57.07} -- All-Seer Xanarian
+RareCoordsRaw[122958] = {Zone="Antoran Wastes", X=61.78, Y=36.96} -- Blistermaw
+RareCoordsRaw[126199] = {Zone="Antoran Wastes", X=53.03, Y=36.0} -- Vrax'thul
+RareCoordsRaw[126115] = {Zone="Antoran Wastes", X=66.38, Y=54.24} -- Ven'orn
+RareCoordsRaw[126208] = {Zone="Antoran Wastes", X=64.29, Y=48.09} -- Varga
+RareCoordsRaw[126338] = {Zone="Antoran Wastes", X=61.33, Y=65.15} -- Wrath-Lord Yarez
+RareCoordsRaw[127118] = {Zone="Antoran Wastes", X=50.9 , Y=55.3} -- WorldSplitter Skuul
+RareCoordsRaw[126254] = {Zone="Antoran Wastes", X=62.21, Y=53.52} -- Lieutenant Xakaar 
+RareCoordsRaw[127581] = {Zone="Antoran Wastes", X=54.8 , Y=39.15} -- The Many-Faced Devourer
+RareCoordsRaw[122947] = {Zone="Antoran Wastes", X=57.32, Y=33.57} -- Mistress Il'thendra
+RareCoordsRaw[127703] = {Zone="Antoran Wastes", X=58, Y=12} -- Doomcaster Suprax
+RareCoordsRaw[127700] = {Zone="Antoran Wastes", X=84.6, Y=81} -- Squadron Commander Vishax
+RareCoordsRaw[127300] = {Zone="Antoran Wastes", X=55.39, Y=21.64} -- Void Warden Valsuran
+RareCoordsRaw[127084] = {Zone="Antoran Wastes", X=82.66, Y=65.63} -- Commander Texlaz
+RareCoordsRaw[127706] = {Zone="Antoran Wastes", X=64.92, Y=82.88} -- Rezira the Seer
+RareCoordsRaw[127291] = {Zone="Antoran Wastes", X=52.7 , Y=29.5} -- Watcher Aival
+ -- Mac'aree
+RareCoordsRaw[126867] = {Zone="Mac'aree", X=33.65, Y=48.10} -- Venomtail Skyfin
+RareCoordsRaw[126860] = {Zone="Mac'aree", X=38.64, Y=55.58} -- Kaara The pale
+RareCoordsRaw[126869] = {Zone="Mac'aree", X=27.16, Y=30} -- Captain Faruq
+RareCoordsRaw[126912] = {Zone="Mac'aree", X=49.81,  9.83} -- Skreeg the Devourer
+RareCoordsRaw[124440] = {Zone="Mac'aree", X=58.73, Y=37.60} -- Overseer y'Beda
+RareCoordsRaw[126913] = {Zone="Mac'aree", X=48.79, Y=52.35} -- Slithon the last
+RareCoordsRaw[126899] = {Zone="Mac'aree", X=48.11, Y=40.60} -- Jed'hin Champion Vorsuk
+RareCoordsRaw[126866] = {Zone="Mac'aree", X=63.89, Y=64.42} -- Vigilant Kuro
+RareCoordsRaw[126908] = {Zone="Mac'aree", X=64.03, Y=29.52} -- Zul'tan the Numerous
+RareCoordsRaw[126862] = {Zone="Mac'aree", X=43.81, Y=60.63} -- Baruut the Bloodthirsty
+RareCoordsRaw[126896] = {Zone="Mac'aree", X=35.95, Y=58.97} -- Herald of Chaos
+RareCoordsRaw[126865] = {Zone="Mac'aree", X=36.73, Y=23.88} -- Vigilant Thanos
+RareCoordsRaw[126900] = {Zone="Mac'aree", X=61.89, Y=50.37} -- Instructor Tarahna
+RareCoordsRaw[126852] = {Zone="Mac'aree", X=55.58, Y=60.25} -- Wrangler Kravos
+RareCoordsRaw[126887] = {Zone="Mac'aree", X=30.13, Y=40.21} -- Ataxon
+RareCoordsRaw[126868] = {Zone="Mac'aree", X=39.15, Y=66.72} -- Turek the Lucid
+RareCoordsRaw[125498] = {Zone="Mac'aree", X=60.92, Y=29.83} -- Overseer Y'Morna
+RareCoordsRaw[126864] = {Zone="Mac'aree", X=41.15, Y=11.49} -- Feasel the Muffin Thief
+RareCoordsRaw[127704] = {Zone="Mac'aree", X=40, Y=40} -- soultender Videx
+RareCoordsRaw[125497] = {Zone="Mac'aree", X=58.0, Y=30.9} -- Overseer Y'Sorna
+RareCoordsRaw[126910] = {Zone="Mac'aree", X=56.8, Y=14.5} -- Commander Xethgar
+RareCoordsRaw[122838] = {Zone="Mac'aree", X=44.6, Y=71.6} -- Shadowcaster Voruun
+RareCoordsRaw[126815] = {Zone="Mac'aree", X=65.3, Y=67.5} -- Soultwisted Monstrosity
+RareCoordsRaw[126885] = {Zone="Mac'aree", X=35.2, Y=37.2} -- Umbraliss
+RareCoordsRaw[126889] = {Zone="Mac'aree", X=70.4, Y=46.7} -- Sorolis the Ill-Fated
+RareCoordsRaw[126898] = {Zone="Mac'aree", X=44.2, Y=49.8} -- Sabuul
 
 local RareNamesLocalized = {};
 RareNamesLocalized['enUS'] = {}
@@ -572,14 +635,10 @@ BiggerBagAssetIDs[71919] = 104167 --Zhu-Gon th--]]
 
 local SoundsToPlay = {}
 SoundsToPlay['none'] = ""
-SoundsToPlay['DIIING'] = "sound\\CREATURE\\MANDOKIR\\VO_ZG2_MANDOKIR_LEVELUP_EVENT_01.ogg"
-SoundsToPlay['You are not prepared!'] = "sound\\Creature\\Illidan\\BLACK_Illidan_04.wav"
---SoundsToPlay['Plaaaytime'] = "Sound\\Creature\\Meathook\\CS_Meathook_Spawn.wav"
---SoundsToPlay['Intruder alert'] = "Sound\\Creature\\MobileAlertBot\\MobileAlertBotIntruderAlert01.wav"
-SoundsToPlay['BG win soon'] = "Sound\\Interface\\PVPWarningHordeMono.wav"
-SoundsToPlay['Flag taken'] = "Sound\\Interface\\PVPFlagTakenMono.wav"
-SoundsToPlay['Raid Warning'] = "Sound\\interface\\RaidWarning.wav"
-SoundsToPlay['Calm drums'] = "Sound\\interface\\ReadyCheck.wav"
+SoundsToPlay['PVPWarningHordeMono'] = "Sound\\INTERFACE\\PVPWarningHordeMono.ogg"
+SoundsToPlay['PVPFlagTakenMono'] = "Sound\\INTERFACE\\PVPFlagTakenMono.ogg"
+SoundsToPlay['RaidWarning'] = "Sound\\INTERFACE\\RaidWarning.ogg"
+SoundsToPlay['UI_Mission_200Percent'] = "Sound\\INTERFACE\\UI_Mission_200Percent.ogg"
 
 
 local RareSeen = {}
@@ -646,7 +705,7 @@ function RC:getTargetPercentHProunded()
 	end
 end
 
---[[function RC:setWaypoint(id, x, y)
+function RC:setWaypoint(id, x, y)
 	if TomTom ~= nil and RCDB.tomtom then
 		if not RC:IsIgnoredRareID(id) then
 			--print(id,x,y)
@@ -655,13 +714,13 @@ end
 					if Waypoints[id] ~= nil then
 						self:removeWaypoint(id)
 					end
-					Waypoints[id] = TomTom:AddWaypoint(RareCoordsRaw[id]["x"],RareCoordsRaw[id]["y"],self:getLocalRareName(id))
+					Waypoints[id] = TomTom:AddWaypoint(RareCoordsRaw[id]["Zone"],RareCoordsRaw[id]["x"],RareCoordsRaw[id]["y"],self:getLocalRareName(id))
 				end
 			elseif x ~= nil and y ~= nil then
 				if Waypoints[id] ~= nil then
 					self:removeWaypoint(id)
 				end
-				Waypoints[id] = TomTom:AddWaypoint(x,y,self:getLocalRareName(id))
+				Waypoints[id] = TomTom:AddWaypoint(Zone,x,y,self:getLocalRareName(id))
 				--print("SetWaypoint to "..x..","..y)
 			end
 		end
@@ -669,7 +728,7 @@ end
 	if id ~= nil and x ~= nil and y ~= nil then
 		currentLocation[id] = {x = x, y = y}
 	end
-end--]]
+end
 
 function RC:removeWaypoint(id)
 	if Waypoints[id] ~= nil then
