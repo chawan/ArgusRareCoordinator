@@ -3,7 +3,7 @@ local i,j = 0,0
 local ListLoaded = false
 local RareList = {}
 local IgnoredRareIDs = {}
-local backdrop = {	bgFile = "", 
+local backdrop = {	bgFile = "Interface/Tooltips/UI-Tooltip-Background", 
 					edgeFile = "Interface/Tooltips/UI-Tooltip-Border", 
 					tile = true, tileSize = 16, edgeSize = 16, 
 					insets = { left = 4, right = 4, top = 4, bottom = 4 } }
@@ -92,7 +92,7 @@ end
 
 
 local RCConfig = CreateFrame("Frame", "RCConfig", UIParent)
-RCConfig.name = "RareCoordinator"
+RCConfig.name = "ArgusRareCoordinator"
 RCConfig.refresh = function(self) RCConfig_Load() end
 RCConfig.okay = function(self) RCConfig_Okay() end
 RCConfig.cancel = function(self) RConfig_Cancel() end
@@ -101,13 +101,13 @@ RCConfig.default = function(self) RCConfig_Defaults() end
 
 RCConfig.heading = RCConfig:CreateFontString("RCconfig.text", nil, "GameFontNormalLarge")
 RCConfig.heading:SetPoint("TOPLEFT", "RCConfig", 10, -10)
-RCConfig.heading:SetText("RareCoordinator")
+RCConfig.heading:SetText("ArgusRareCoordinator")
 
 RCConfig.description = RCConfig:CreateFontString("RCConfig.description", nil, "GameFontHighlight")
 RCConfig.description:SetPoint("TOPLEFT", RCConfig.heading, "BOTTOMLEFT", 0, -10)
 RCConfig.description:SetWidth(600)
 RCConfig.description:SetJustifyH("LEFT")
-RCConfig.description:SetText("You can change general settings in RareCoordinator directly.\nPlease use the cogwheel in the upper left corner of the main window.")
+RCConfig.description:SetText("You can change general settings in ArgusRareCoordinator directly.\nPlease use the cogwheel in the upper left corner of the main window.")
 
 RCConfig.configurelist = CreateFrame("Button", "RCConfig.configurelist", RCConfig, "UIPanelButtonTemplate")
 RCConfig.configurelist:SetText("Configure Rare List")
@@ -118,7 +118,7 @@ RCConfig.configurelist:SetHeight(20)
 
 local RCConfigList = CreateFrame("Frame", "RCConfigList", RCConfig)
 RCConfigList.name = "List"
-RCConfigList.parent = "RareCoordinator"
+RCConfigList.parent = "ArgusRareCoordinator"
 RCConfigList.refresh = function(self) RCConfigList_Load() end
 RCConfigList.okay = function(self) RCConfigList_Okay() end
 RCConfigList.cancel = function(self) RCConfigList_Cancel() end
@@ -129,9 +129,9 @@ RCConfigList.tabs:SetWidth(600)
 RCConfigList.tabs:SetHeight(550)
 RCConfigList.tabs:SetPoint("TOPLEFT", "RCConfigList", 10, -10)
 
-RCConfigList.tabs.texture = RCConfigList.tabs:CreateTexture()
+--[[RCConfigList.tabs.texture = RCConfigList.tabs:CreateTexture()
 RCConfigList.tabs.texture:SetTexture(1,1,1,0)
-RCConfigList.tabs.texture:SetAllPoints(RCConfigList.tabs)
+RCConfigList.tabs.texture:SetAllPoints(RCConfigList.tabs)--]]
 
 
 RCConfigList.tabs.select = CreateFrame("Frame", "RCConfigList.tabs.select", RCConfigList.tabs)
@@ -139,9 +139,9 @@ RCConfigList.tabs.select:SetWidth(RCConfigList.tabs:GetWidth())
 RCConfigList.tabs.select:SetHeight(20)
 RCConfigList.tabs.select:SetPoint("TOPLEFT", "RCConfigList.tabs", 0, 0)
 
-RCConfigList.tabs.select.texture = RCConfigList.tabs.select:CreateTexture()
+--[[RCConfigList.tabs.select.texture = RCConfigList.tabs.select:CreateTexture()
 RCConfigList.tabs.select.texture:SetTexture(0,0,0,0)
-RCConfigList.tabs.select.texture:SetAllPoints(RCConfigList.tabs.select)
+RCConfigList.tabs.select.texture:SetAllPoints(RCConfigList.tabs.select)--]]
 
 RCConfigList.tabs.select.tabs = {}
 RCConfigList.tabs.tabs = {}
@@ -194,7 +194,7 @@ local i = 0 -- ToDo
 	--RCConfigList.tabs.tabs[i].texture = RCConfigList.tabs.tabs[i]:CreateTexture()
 	--RCConfigList.tabs.tabs[i].texture:SetTexture(0.3,0.3,0.3,0.5)
 	--RCConfigList.tabs.tabs[i].texture:SetAllPoints(RCConfigList.tabs.tabs[i])
-	RCConfigList.tabs.tabs[i]:SetBackdrop(backdrop)
+	--RCConfigList.tabs.tabs[i]:SetBackdrop(backdrop)
 
 
 	RCConfigList.tabs.tabs[i].header = RCConfigList.tabs.tabs[i]:CreateFontString("RCConfigList.tabs.tabs["..i.."]", nil, "GameFontNormal")
