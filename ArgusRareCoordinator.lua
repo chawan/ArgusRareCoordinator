@@ -596,43 +596,6 @@ RareNamesLocalized['ptBR'][72245] = "Zesqua"
 RareNamesLocalized['ptBR'][71919] = "Zhu-Gon, o Azedo"--]]
 
 
---[[ Going To Need A Bigger Bag Asset IDs
-BiggerBagAssetIDs = {}
-BiggerBagAssetIDs[73174] = 86574 --Archiereus of Flame (Sanctuary)
-BiggerBagAssetIDs[73666] = 86574 --Archiereus of Flame (Summoned)
-BiggerBagAssetIDs[72775] = 104169 --Bufo
-BiggerBagAssetIDs[73171] = 104302 --Champion of the Black Flame
-BiggerBagAssetIDs[72045] = 86584 --Chelon
-BiggerBagAssetIDs[73175] = 104299 --Cinderfall
-BiggerBagAssetIDs[72049] = 104268 --Cranegnasher
-BiggerBagAssetIDs[73281] = 104294 --Dread Ship Vazuvius
-BiggerBagAssetIDs[73158] = 104287 --Emerald Gander
---BiggerBagAssetIDs[73279] =  --Evermaw < he drops nothing for the av
-BiggerBagAssetIDs[73172] = 104298 --Flintlord Gairan
-BiggerBagAssetIDs[73282] = 104159 --Garnia
-BiggerBagAssetIDs[72970] = 104262 --Golganarr
-BiggerBagAssetIDs[73161] = 86584 --Great Turtle Furyshell
-BiggerBagAssetIDs[72909] = 104291 --Gu'chi the Swarmbringer
-BiggerBagAssetIDs[73167] = 104269 --Huolon
-BiggerBagAssetIDs[73163] = 104161 --Imperial Python
---BiggerBagAssetIDs[73160] =  --Ironfur Steelhorn < nothing
-BiggerBagAssetIDs[73169] = 104331 --Jakur of Ordon
-BiggerBagAssetIDs[72193] = 104035 --Karkanos
-BiggerBagAssetIDs[73277] = 104156 --Leafmender
-BiggerBagAssetIDs[73166] = 104168 --Monstrous Spineclaw
-BiggerBagAssetIDs[72048] = 104321 --Rattleskew
-BiggerBagAssetIDs[73157] = 104313 --Rock Moss
-BiggerBagAssetIDs[71864] = 104320 --Spelurk
-BiggerBagAssetIDs[72769] = 104307 --Spirit of Jadefire
---BiggerBagAssetIDs[73704] =  --Stinkbraid 
-BiggerBagAssetIDs[72808] = 104268 --Tsavo'ka
-BiggerBagAssetIDs[73173] = 104306 --Urdur the Cauterizer
-BiggerBagAssetIDs[73170] = 104305 --Watcher Osu
-BiggerBagAssetIDs[72245] = 104303 --Zesqua
-BiggerBagAssetIDs[71919] = 104167 --Zhu-Gon th--]]
-
-
-
 local SoundsToPlay = {}
 SoundsToPlay['none'] = ""
 SoundsToPlay['PVPWarningHordeMono'] = "Sound\\INTERFACE\\PVPWarningHordeMono.ogg"
@@ -705,7 +668,7 @@ function RC:getTargetPercentHProunded()
 	end
 end
 
-function RC:setWaypoint(id, x, y)
+function RC:setWaypoint(id, Zone, x, y)
 	if TomTom ~= nil and RCDB.tomtom then
 		if not RC:IsIgnoredRareID(id) then
 			--print(id,x,y)
@@ -857,11 +820,7 @@ end
 
 local function ShowTooltip(tt, owner)
 	tt:SetOwner(owner, "ANCHOR_BOTTOMRIGHT", 0, 0)
-	if RCDB.biggerbag then
-		tt:SetHyperlink(GetAchievementLink(8728))
-	else
-		tt:SetHyperlink(GetAchievementLink(8714))
-	end
+	tt:SetHyperlink(GetAchievementLink(12078))
 end
 
 local function HideTooltip(tt)
@@ -997,21 +956,6 @@ local function ColorfulTime(m)
 	end
 end
 
---[[local function GetRareIDsforAssetID(assetid)
-	local t = {}
-	local atleastoneassetid = false
-	for rareid,v in pairs(BiggerBagAssetIDs) do
-		if assetid == v then
-			table.insert(t, rareid)
-			atleastoneassetid = true
-		end
-	end
-	if atleastoneassetid then
-		return t
-	else
-		return false
-	end
-end--]]
 
 RC:SetWidth(300)
 RC:SetHeight(200)
@@ -1019,7 +963,7 @@ RC:SetFrameStrata("BACKGROUND")
 RC:SetPoint("CENTER",0,0)
 RC:SetClampedToScreen(true)
 RC:SetMinResize(150, 0)
-RC:SetMaxResize(500, 0)
+RC:SetMaxResize(500, 500)
 
 RC.texture = RC:CreateTexture(nil,"BACKGROUND")
 RC.texture:SetTexture(0,0,0,0.4)
@@ -1028,10 +972,10 @@ RC.texture:SetAllPoints(RC)
 
 RC.left = CreateFrame("Frame", "RC.left", RC)
 RC.left:SetWidth(200)
-RC.left:SetHeight(RC:GetHeight()-9)
+RC.left:SetHeight(400)
 RC.left:SetPoint("TOPLEFT", RC, 5, -5)
 RC.left.texture = RC:CreateTexture(nil,"BACKGROUND", nil, 1)
-RC.left.texture:SetTexture(0,0,0,0.2)
+RC.left.texture:SetTexture(0,0,0,0.7)
 RC.left.texture:SetAllPoints(RC.left)
 
 RC.mid = CreateFrame("Frame", "RC.mid", RC)
@@ -1123,8 +1067,8 @@ for i=0, #RareIDs do
 		--RC.left.nameframe[i].texture:SetTexture(0,0.5,0,0.4)
 		--RC.left.nameframe[i].texture:SetAllPoints(RC.left.nameframe[i])
 	
-		RC.left.nameframe[i]:SetScript("OnEnter", function (self) ShowMap(i) end)
-		RC.left.nameframe[i]:SetScript("OnLeave", function (self) HideMap(i) end)
+		--RC.left.nameframe[i]:SetScript("OnEnter", function (self) ShowMap(i) end)
+		--RC.left.nameframe[i]:SetScript("OnLeave", function (self) HideMap(i) end)
 		--RC.left.nameframe[i]:Hide()
 	end
 end
@@ -1376,28 +1320,11 @@ RC.opt.sort.cb = CreateFrame("CheckButton", "RC.opt.sort.cb", RC.opt.sort, "Chat
 RC.opt.sort.cb:SetPoint("LEFT", RC.opt.sort, 4, 0);
 RC.opt.sort.cb.tooltip = "Sorts the list by timers/alphabetically"
 
-RC.opt.biggerbag = CreateFrame("Frame", "RC.opt.biggerbag", RC.opt)
-RC.opt.biggerbag:SetWidth(RC.opt:GetWidth() - 8)
-RC.opt.biggerbag:SetHeight(20)
-RC.opt.biggerbag:SetPoint("TOPLEFT", RC.opt.sort, "BOTTOMLEFT", 0, -4)
-RC.opt.biggerbag.texture = RC.opt.biggerbag:CreateTexture(nil,"BACKGROUND", nil, 1)
-RC.opt.biggerbag.texture:SetTexture(0,0,0,0.2)
-RC.opt.biggerbag.texture:SetAllPoints(RC.opt.biggerbag)
-
-RC.opt.biggerbag.status = RC.opt.biggerbag:CreateFontString("RC.opt.biggerbag.status", nil, "GameFontNormal")
-RC.opt.biggerbag.status:SetPoint("LEFT", "RC.opt.biggerbag", 28, 0)
-RC.opt.biggerbag.status:SetFont("Fonts\\ARIALN.TTF",12)
-RC.opt.biggerbag.status:SetTextColor(1,1,1)
-RC.opt.biggerbag.status:SetText("Track Going To Need A Bigger Bag")
-
-RC.opt.biggerbag.cb = CreateFrame("CheckButton", "RC.opt.biggerbag.cb", RC.opt.biggerbag, "ChatConfigCheckButtonTemplate");
-RC.opt.biggerbag.cb:SetPoint("LEFT", RC.opt.biggerbag, 4, 0);
-RC.opt.biggerbag.cb.tooltip = "Switches the achievement tracker to the \"Going To Need A Bigger Bag\" achievement instead of \"Timeless Champion\""
 
 RC.opt.moreconfig = CreateFrame("Frame", "RC.opt.moreconfig", RC.opt)
 RC.opt.moreconfig:SetWidth(RC.opt:GetWidth() - 8)
 RC.opt.moreconfig:SetHeight(20)
-RC.opt.moreconfig:SetPoint("TOPLEFT", RC.opt.biggerbag, "BOTTOMLEFT", 0, -4)
+RC.opt.moreconfig:SetPoint("TOPLEFT", RC.opt.sort, "BOTTOMLEFT", 0, -4)
 RC.opt.moreconfig.texture = RC.opt.moreconfig:CreateTexture(nil,"BACKGROUND", nil, 1)
 RC.opt.moreconfig.texture:SetTexture(0,0,0,0.2)
 RC.opt.moreconfig.texture:SetAllPoints(RC.opt.moreconfig)
@@ -1505,122 +1432,6 @@ RCnotify:SetAttribute( "type", "macro" );
 
 RCnotify:Hide()
 
-function RC:ShowUpdateMessage()
-	RCupdatemsg = CreateFrame("Frame", "RCupdatemsg", UIParent)
-	RCupdatemsg:SetWidth(350)
-	RCupdatemsg:SetHeight(225)
-	RCupdatemsg:SetClampedToScreen(true)
-	RCupdatemsg:SetPoint("CENTER",0,0)
-
-	RCupdatemsg.texture = RCupdatemsg:CreateTexture(nil,"BACKGROUND")
-	RCupdatemsg.texture:SetTexture(0,0,0,0.6)
-	RCupdatemsg.texture:SetAllPoints(RCupdatemsg)
-
-	RCupdatemsg.closeicon = CreateFrame("Button", "RCupdatemsg.closeicon", RCupdatemsg, "UIPanelCloseButton")
-	RCupdatemsg.closeicon:SetPoint("TOPRIGHT", "RCupdatemsg", 0, 0)
-	RCupdatemsg.closeicon:SetWidth(16)
-	RCupdatemsg.closeicon:SetHeight(16)
-	RCupdatemsg.closeicon.texture = RCupdatemsg.closeicon:CreateTexture(nil, "OVERLAY")
-	RCupdatemsg.closeicon.texture:SetTexture([[Interface\AddOns\ArgusRareCoordinator\plus.tga]])
-	RCupdatemsg.closeicon.texture:SetAllPoints(RCupdatemsg.closeicon)
-	RCupdatemsg.closeicon.texture:SetRotation((3*math.pi)/4)
-	RCupdatemsg.closeicon:SetScript("OnClick", function (self) RCupdatemsg:Hide() end)
-	
-	RCupdatemsg.closebutton = CreateFrame("Button", "RCupdatemsg.closebutton", RCupdatemsg, "UIPanelButtonTemplate")
-	RCupdatemsg.closebutton:SetPoint("BOTTOM",0,5)
-	RCupdatemsg.closebutton:SetWidth(80)
-	RCupdatemsg.closebutton:SetHeight(16)
-	RCupdatemsg.closebutton:SetText("Okay")
-	RCupdatemsg.closebutton:SetScript("OnClick", function(self) RCupdatemsg:Hide() end)
-	
-
-	RCupdatemsg:SetScript("OnDragStart", onDragStart)
-	RCupdatemsg:SetScript("OnDragStop", onDragStop)	
-	RCupdatemsg:EnableMouse(true)
-	RCupdatemsg:SetMovable(true)
-	RCupdatemsg:RegisterForDrag("LeftButton")
-	
-	
-	RCupdatemsg.title = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.title:SetPoint("TOP", "RCupdatemsg", 0, -4)
-	RCupdatemsg.title:SetFont("Fonts\\ARIALN.TTF",14,"OUTLINE")
-	RCupdatemsg.title:SetTextColor(1,1,1)
-	RCupdatemsg.title:SetText("ArgusRareCoordinator")
-	
-	RCupdatemsg.text = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.text:SetPoint("TOPLEFT", RCupdatemsg, 10, -22)
-	RCupdatemsg.text:SetFont("Fonts\\ARIALN.TTF",12)
-	RCupdatemsg.text:SetTextColor(1,1,1)
-	RCupdatemsg.text:SetJustifyH("LEFT")
-	local v="|cff00ff00"..RC.version.."|r"
-	if RC.isAlpha then v=v.."+ (newer alpha)" end
-	RCupdatemsg.text:SetText("Thank you for choosing ArgusRareCoordinator.\nYou are using v"..v..".")
-	
-	RCupdatemsg.important = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.important:SetPoint("TOPLEFT", RCupdatemsg.text, 0, -RCupdatemsg.text:GetStringHeight()-5)
-	RCupdatemsg.important:SetFont("Fonts\\ARIALN.TTF",12)
-	RCupdatemsg.important:SetTextColor(1,0,0)
-	RCupdatemsg.important:SetJustifyH("LEFT")
-	RCupdatemsg.important:SetText("Remember to update ArgusRareCoordinator after WoD goes live.")
-	
-	RCupdatemsg.features = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.features:SetPoint("TOPLEFT", RCupdatemsg.important, 0, -RCupdatemsg.important:GetStringHeight()-5)
-	RCupdatemsg.features:SetFont("Fonts\\ARIALN.TTF",12,"OUTLINE")
-	RCupdatemsg.features:SetTextColor(1,1,1)
-	RCupdatemsg.features:SetJustifyH("LEFT")
-	RCupdatemsg.features:SetText("New Features:")
-	
-	RCupdatemsg.feature1 = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.feature1:SetPoint("TOPLEFT", RCupdatemsg.features, 0, -16)
-	RCupdatemsg.feature1:SetFont("Fonts\\ARIALN.TTF",12)
-	RCupdatemsg.feature1:SetTextColor(1,1,1)
-	RCupdatemsg.feature1:SetJustifyH("LEFT")
-	RCupdatemsg.feature1:SetText("• Update for 6.0")
-	
-	RCupdatemsg.feature2 = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.feature2:SetPoint("TOPLEFT", RCupdatemsg.feature1, 0, -16)
-	RCupdatemsg.feature2:SetFont("Fonts\\ARIALN.TTF",12)
-	RCupdatemsg.feature2:SetTextColor(1,1,1)
-	RCupdatemsg.feature2:SetJustifyH("LEFT")
-	RCupdatemsg.feature2:SetText("• Vignette support (alerts you if a rare is nearby)")
-	--[[
-	RCupdatemsg.feature3 = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.feature3:SetPoint("TOPLEFT", RCupdatemsg.feature2, 0, -16)
-	RCupdatemsg.feature3:SetFont("Fonts\\ARIALN.TTF",12)
-	RCupdatemsg.feature3:SetTextColor(1,1,1)
-	RCupdatemsg.feature3:SetJustifyH("LEFT")
-	RCupdatemsg.feature3:SetText("• If a Rare is alive, it's approximate position is shown on the map")
-	
-	RCupdatemsg.feature3button = CreateFrame("Button", "RCupdatemsg.feature3button", RCupdatemsg, "UIPanelButtonTemplate")
-	RCupdatemsg.feature3button:SetPoint("LEFT",RCupdatemsg.feature3,42,-1)
-	RCupdatemsg.feature3button:SetWidth(80)
-	RCupdatemsg.feature3button:SetHeight(16)
-	RCupdatemsg.feature3button:SetText("here")
-	RCupdatemsg.feature3button:SetScript("OnClick", function(self) InterfaceOptionsFrame_OpenToCategory("List");InterfaceOptionsFrame_OpenToCategory("List") end)
-
-	RCupdatemsg.feature4 = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.feature4:SetPoint("TOPLEFT", RCupdatemsg.feature3, 0, -16)
-	RCupdatemsg.feature4:SetFont("Fonts\\ARIALN.TTF",12)
-	RCupdatemsg.feature4:SetTextColor(1,1,1)
-	RCupdatemsg.feature4:SetJustifyH("LEFT")
-	RCupdatemsg.feature4:SetText("• If a Rare is alive, it's approximate position is shown on the map")
-	
-	RCupdatemsg.feature5 = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.feature5:SetPoint("TOPLEFT", RCupdatemsg.feature4, 0, -16)
-	RCupdatemsg.feature5:SetFont("Fonts\\ARIALN.TTF",12)
-	RCupdatemsg.feature5:SetTextColor(1,1,1)
-	RCupdatemsg.feature5:SetJustifyH("LEFT")
-	RCupdatemsg.feature5:SetText("  (mouseover it's name)")
-	
-	RCupdatemsg.feature6 = RCupdatemsg:CreateFontString("RCupdatemsg.name", nil, "GameFontNormal")
-	RCupdatemsg.feature6:SetPoint("TOPLEFT", RCupdatemsg.feature5, 0, -16)
-	RCupdatemsg.feature6:SetFont("Fonts\\ARIALN.TTF",12)
-	RCupdatemsg.feature6:SetTextColor(1,1,1)
-	RCupdatemsg.feature6:SetJustifyH("LEFT")
-	RCupdatemsg.feature6:SetText("• You can now track the Going To Need A Bigger Back achievement")
-	]]--
-end
-
 
 
 local total = 0
@@ -1628,37 +1439,6 @@ local function updateText(self,elapsed)
 	if elapsed == nil then elapsed = 0 end
     total = total + elapsed
     if total >= 10 then
-		if RCDB.biggerbag then
-			for i = 1,#RareIDs do
-				RareAv[RareIDs[i]] = false
-			end
-			for i=1,GetAchievementNumCriteria(8728) do
-				local _, _, completed, _, _, _, _, assetID, _, _ = GetAchievementCriteriaInfo(8728,i)
-				local t = GetRareIDsforAssetID(assetID)
-				if t then
-					for _,rareID in pairs(t) do
-						RareAv[rareID] = completed
-					end
-				end
-			end
-			for i = 1,#RareIDs do
-				if not BiggerBagAssetIDs[RareIDs[i]] then
-					RareAv[RareIDs[i]] = nil
-				end
-			end
-		else
-			for i=1,GetAchievementNumCriteria(8714) do
-				local _, _, completed, _, _, _, _, assetID, _, _ = GetAchievementCriteriaInfo(8714,i)
-				if assetID == 73854 then -- Fix for Cranegnasher since he has 2 NPC IDs
-					assetID = 72049
-				end
-				if completed then
-					RareAv[assetID] = true
-				else
-					RareAv[assetID] = false
-				end		
-			end
-		end
 		for k,v in pairs(RareSeen) do
 			if tonumber(k) == 72970 then -- longer reset for Golganarr
 				if tonumber(v)+24*60*60 < time() then
@@ -1889,17 +1669,7 @@ RC.opt.sort.cb:SetScript("OnClick",
 	updateText(RC,100)
 	onResize(RC, RC:GetWidth(), 0, RareIDs)
   end);
-  
-RC.opt.biggerbag.cb:SetScript("OnClick", 
-  function()
-	if RC.opt.biggerbag.cb:GetChecked() then
-		RCDB.biggerbag = true
-	else
-		RCDB.biggerbag = false
-	end
-	updateText(RC,100)
-	onResize(RC, RC:GetWidth(), 0, RareIDs)
-  end);
+
   
   
 local function LockOrUnlock()
@@ -2047,18 +1817,9 @@ function RC:OnLoad(...)
 		end
 		RC.opt.sort.cb:SetChecked(RCDB.sort)
 		
-		if RCDB.biggerbag == nil then
-			RCDB.biggerbag = false
-		end
-		RC.opt.biggerbag.cb:SetChecked(RCDB.biggerbag)
-		
 		if RCDB.lastVersion == nil then
 			RCDB.lastVersion = ""
 			LockOrUnlock()
-		end
-		if RCDB.lastVersion ~= RC.version then
-			RC:ShowUpdateMessage()
-			RCDB.lastVersion = RC.version
 		end
 		
 		local sorted = RC:createSortedTable(false)
@@ -2147,8 +1908,6 @@ function RC:ShowOrHide(...)
 		end
 	end
 end
-
-
 
 function RC:Chat(message, sender, language, channelString, target, flags, unknown, channelNumber, channelName, unknown, counter, guid)
 	if channelName == "RCELVA" then
